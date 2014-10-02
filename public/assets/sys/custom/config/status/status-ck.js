@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".sortable").sortable({update:function(e,t){alert("update")}})});

@@ -1,0 +1,429 @@
+//
+// THEME VARIABLES
+//
+
+@import "variables.less";
+@import "mixins.less";
+
+@sidebarBgColor: #33b5e5;
+@sidebarLinksColor: #fff;
+@sidebarLinksHoverColor: #fff;
+@sidebarLinksHoverBgColor: transparent; //#33b5e5; // #3496ba;
+@sidebarSepColor: #72d7f2;
+
+body {
+    margin-top: 35px;
+    font-weight: 400;
+    background: #f5f5f5;
+}
+
+a.link {
+    border-bottom: 1px dotted @link-hover-color;
+
+    &:hover {
+        text-decoration : none;
+    }
+}
+
+.siderable {
+    .sidebar-left {
+
+    }
+
+    .sidebar-right {
+        position: relative;
+        background: white;
+        // margin-right: -25px;
+        padding-right: 15px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+.well {
+    background: white;
+}
+
+.person-box {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid @gray-lighter;
+}
+
+.tag-item {
+    margin: 0 5px 5px 0;
+}
+
+//
+// Header
+//
+.navbar-brand {
+    padding: 15px 0 0 15px;
+    font-weight: 400;
+    font-size: 24px;
+
+    small {
+        font-weight: 300;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+//
+// Headings
+//
+    h1, h2, h3, h4 {
+        small {
+            font-weight: 300;
+        }
+    }
+
+//
+// Table design
+// --------------------------------------------------
+table {
+
+    &.table-hide-buttons {
+
+        .btn {
+            opacity: 0;
+        }
+
+        tr:hover {
+            .btn {
+                opacity: 1; 
+            }
+        }
+    }
+
+    &.table-primary, &.table-danger, &.table-success, &.table-warning {
+        thead {
+            color: white; 
+            a {
+                color: white;
+            }
+        }
+    }
+
+    &.table-primary {
+        thead { background: @brand-primary; }
+    }
+
+    &.table-danger {
+
+    }
+
+    &.table-success {
+
+    }
+
+    &.table-warning {
+
+    }
+}
+
+//
+// Buttons design
+// --------------------------------------------------
+.btn {
+    &.btn-quick {
+
+        i { font-size: 32px; }
+        padding: 30px 0 10px 0;
+        text-align: center;
+
+    }
+}
+
+
+
+/*
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";*/
+
+
+
+#wrapper {
+    padding-left: 0;
+}
+
+#page-wrapper {
+    width: 100%;
+    padding: 5px 15px;
+}
+
+/* Nav Messages */
+
+.messages-dropdown .dropdown-menu .message-preview .avatar,
+.messages-dropdown .dropdown-menu .message-preview .name,
+.messages-dropdown .dropdown-menu .message-preview .message,
+.messages-dropdown .dropdown-menu .message-preview .time {
+    display: block;
+}
+
+.messages-dropdown .dropdown-menu .message-preview .avatar {
+    float: left;
+    margin-right: 15px;
+}
+
+.messages-dropdown .dropdown-menu .message-preview .name {
+    font-weight: bold;
+}
+
+.messages-dropdown .dropdown-menu .message-preview .message {
+    font-size: 12px;
+}
+
+.messages-dropdown .dropdown-menu .message-preview .time {
+    font-size: 12px;
+}
+
+
+/* Nav Announcements */
+
+.announcement-heading {
+    font-size: 50px;
+    margin: 0;
+}
+
+.announcement-text {
+    margin: 0;
+}
+
+/* Table Headers */
+
+table.tablesorter thead {
+    cursor: pointer;
+}
+
+table.tablesorter thead tr th:hover {
+    background-color: #f5f5f5;
+}
+
+/* Flot Chart Containers */
+
+.flot-chart {
+    display: block;
+    height: 400px;
+}
+
+.flot-chart-content {
+    width: 100%;
+    height: 100%;
+}
+
+/* Edit Below to Customize Widths > 768px */
+@media (min-width:768px) {
+
+    /* Wrappers */
+
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #page-wrapper {
+        padding: 15px 25px;
+    }
+
+    .siderable {
+        .sidebar-right {
+            margin-right: -25px;
+        }
+    }
+
+    /* Side Nav */
+
+    .side-nav {
+        border-top: 1px solid @sidebarSepColor;
+        //box-shadow: inset -10px 0 5px -5px hsla(0,0%,0%,.25);
+        margin-left: -250px;
+        left: 250px;
+        width: 250px;
+        position: fixed;
+        top: 51px;
+        height: 100%;
+        //border-radius: 0;
+        background-color: @sidebarBgColor;
+        overflow-y: auto;
+    }
+
+    /* Bootstrap Default Overrides - Customized Dropdowns for the Side Nav */
+
+    .side-nav>li.dropdown>ul.dropdown-menu {
+        position: relative;
+        min-width: 250px;
+        margin: 0;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+
+    .side-nav>li.dropdown>ul.dropdown-menu>li>a {
+        color: #fff;
+        padding: 15px 15px 15px 25px;
+    }
+
+    .side-nav>li.dropdown>ul.dropdown-menu>li>a:hover,
+    .side-nav>li.dropdown>ul.dropdown-menu>li>a.active,
+    .side-nav>li.dropdown>ul.dropdown-menu>li>a:focus {
+        color: @sidebarLinksHoverColor;
+        background-color: @sidebarLinksHoverBgColor;
+    }
+
+    .side-nav {
+        li {
+            &.menu-title {
+                color: #f7f7f7;
+                margin: 15px 20px;
+                font-size: 16px;
+            }
+
+            a {
+                font-weight: 300;
+                padding: 12px 0;
+                width: 210px;
+                margin: 0px 20px;
+                border-bottom: 1px solid @sidebarSepColor;
+            }
+        }
+    }
+
+    // .navbar-inverse .navbar-nav
+    // {
+    //     &>li {
+    //         &>a {
+    //             color: #fff;
+    //             border-bottom: 1px solid @sidebarSepColor;
+
+    //             &:hover, &:focus {
+    //                 background-color: @sidebarLinksHoverBgColor;
+    //             }
+    //         }
+
+    //         &.active {
+    //             a {
+    //                 background-color: @sidebarLinksHoverBgColor;
+
+    //                 &:hover {
+    //                     background-color: @sidebarLinksHoverBgColor;
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    //     &>.dropdown {
+
+    //         &.open {
+    //             background-color: @sidebarLinksHoverBgColor;
+
+    //             a {
+    //                 background-color: @sidebarLinksHoverBgColor;
+    //             }
+    //         }
+
+    //         &>a {
+    //             .caret {
+    //                 border-top-color: @sidebarLinksColor;
+    //                 border-bottom-color: @sidebarLinksColor;
+    //             }
+    //         }
+    //     }
+    // }
+
+    /* Nav Messages */
+
+    .messages-dropdown .dropdown-menu {
+        min-width: 300px;
+    }
+
+    .messages-dropdown .dropdown-menu li a {
+        white-space: normal;
+    }
+
+}
+
+// For listing deal_stages
+.list-group {
+
+    &.no-bg {
+        .list-group-item {
+            background-color: transparent;
+            border-right: none;
+            border-left: none;
+
+            &:first-child {
+                border-top: none;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .list-group-item {
+        &.lost {
+            background: lighten(@brand-danger, 30%);
+        }
+        &.won {
+            background: lighten(@brand-success, 30%);
+        }
+    }
+
+    &.hide-buttons {
+        li {
+            .btn.btn-xs {
+                opacity: 0;
+            }
+
+            &:hover {
+                span .btn {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.sortable {
+    li {
+        i {
+            cursor: move;
+        }
+    }
+}
+
+.tasks {
+    a {
+        padding-left: 30px;
+
+        &.tasks_late {
+            color: @brand-danger;
+        }
+    } 
+}
+
+// Login
+@import "../app/login.less";
+
+// Counters
+@import "../app/counters.less";
+
+// Boxes
+@import "../app/box.less";
+
+// Timeline
+@import "../app/timeline.less";
+
+// Config
+@import "../app/config.less";
+
+// Statuses
+@import "../app/statuses.less";

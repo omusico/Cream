@@ -1,0 +1,199 @@
+// Timeline styles
+
+.complete {
+    display:none;
+}
+
+.more {
+    cursor:pointer;
+}
+
+.timeline {
+    list-style : none;
+    //margin     : 0 0 0 80px;
+    padding    : 20px 0 0 70px;
+    position   : relative;
+
+    &:before {
+        background  : #cdcdcd;
+        content     : '';
+        height      : 100%;
+        left        : 80px;
+        margin-left : -2px;
+        position    : absolute;
+        width       : 4px;
+        top:        0;
+    }
+
+    .timeslot {
+        margin-left: 45px;
+        margin-bottom: 20px;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        position: relative;
+        background: #353535;
+
+        a, .link {
+            color: white;
+            // border-color: white;
+            // font-weight: 200;
+        }
+
+        .timeslot-title {
+            font-size: @font-size-large;
+            border-bottom: 1px solid rgba(255, 255, 255, .2);
+            padding-bottom: 5px;
+
+            .timeslot-related {
+                display: inline-block;
+                font-size: @font-size-base;
+            }
+        }
+
+        .timeslot-content {
+            padding-top: 5px;
+            font-weight: 300;
+        }
+
+        .timeslot-time {
+            position: absolute;
+            top: 0;
+            left: -120px;
+            color: #353535;
+
+            .date {
+                color: @gray;
+                font-size: @font-size-small;
+            }
+
+            .time {
+                font-size: 24px;
+                font-weight: 400;
+            }
+        }
+
+        .left-caret {
+            position: absolute;
+            left: -13px;
+            border-style: solid;
+            border-width: 10px 10px 10px 0px;
+            height: 0px;
+            width: 0px;
+            border-color: #f7f7f7;
+
+            span {
+                position: absolute;
+                left: 3px;
+                top: -10px;
+                border-color: #f7f7f7 #fff;
+                border-style: solid;
+                border-width: 10px 10px 10px 0px;
+                // height: 0px;
+                // width: 0px;
+            }
+        }
+
+        .icon {
+            position: absolute;
+            z-index: 1000;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            background: #aaa;
+            box-shadow: 0 0 0 6px #ccc;
+            border-radius: 20px;
+            left: -50px;
+            top: 5px;
+
+            i {
+                padding-top: 5px;
+                font-size: 20px;
+                color: white;
+            }
+            
+        }
+    }
+}
+
+
+// .timeline {
+//     list-style : none;
+//     margin     : 0;
+//     padding    : 20px 0 0 0;
+//     position   : relative;
+
+//     &:before {
+//         background  : #cdcdcd;
+//         content     : '';
+//         height      : 100%;
+//         left        : 14px;
+//         margin-left : -2px;
+//         position    : absolute;
+//         width       : 4px;
+//         top:        0;
+//     }
+
+//     .timeslot {
+//         .icon {
+//             position: absolute;
+//             z-index: 1000;
+//             width: 30px;
+//             height: 30px;
+//             text-align: center;
+//             background: #353535;
+//             border: 2px solid #353535;
+//             border-radius: 15px;
+
+
+//             i {padding-top: 3px;
+//                 font-size: 20px;
+//                 color: white;
+//             }
+            
+//         }
+
+//         .task {
+//             position: relative;
+//             padding: 5px;
+//             border: 2px solid;
+//             background: #fff;
+//             margin: 0 0 45px 43px;
+
+//             &.visit { border-color: @brand-primary; .left-caret { border-color: transparent @brand-primary; } }
+//             &.call { border-color: @brand-danger; .left-caret { border-color: transparent @brand-danger; } }
+//             &.email { border-color: @brand-success; .left-caret { border-color: transparent @brand-success; } }
+
+//             .date { 
+//                 position: absolute;
+//                 top: -30px;
+//                 font-size: @font-size-large;
+//                 font-weight: 300;
+//             }
+
+//             .content {
+//                 margin-top: 5px;
+//             }
+
+//             .left-caret {
+//                 position: absolute;
+//                 left: -10px;
+//                 border-style: solid;
+//                 border-width: 10px 10px 10px 0px;
+//                 height: 0px;
+//                 width: 0px;
+
+//                 span {
+//                     position: absolute;
+//                     left: 3px;
+//                     top: -10px;
+//                     border-color: transparent #fff;
+//                     border-style: solid;
+//                     border-width: 10px 10px 10px 0px;
+//                     height: 0px;
+//                     width: 0px;
+//                 }
+//             }
+//         }
+//     }
+// }

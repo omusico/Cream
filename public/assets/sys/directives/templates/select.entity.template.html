@@ -1,0 +1,55 @@
+<div>
+    <div class="form-group">
+        <label for="task_type" class="label-control">Asociar a</label>
+        <div class="clearfix">
+
+            <div class="select-entity">
+
+                <div ng-show="selected_entity" class="btn-group">
+                        <button type="button" class="btn btn-info">[[selected_entity.name]]</button>
+                    <button type="button" class="btn btn-info" ng-click="resetResults()">&times;</button>
+                </div>
+
+                <div ng-hide="selected_entity">
+                    <div class="input-group">
+                        <input type="text" id="results" class="form-control" ng-model="entity_search" ui-keypress="{13:'search()'}" placeholder="términos de búsqueda">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-primary" type="button" ng-click="search()"><i class="fa fa-search"></i> Buscar!</button>
+                        </span>
+                    </div>
+
+                    <p class="text-danger" ng-show="(!search_results_companies.length && !search_results_people.length && !search_results_deals.length) && search_performed">no hay coincidencias</p>
+
+                    <div class="list-group" ng-show="search_results_companies.length || search_results_people.length || search_results_deals.length">
+                        <a href="" ng-click="selectEntity('Lion\\Company', result.id)" class="list-group-item" ng-repeat="result in search_results_companies">[[result.name]] <span class="label label-primary pull-right">empresa</span></a>
+                        <a href="" ng-click="selectEntity('Lion\\People', result.id)" class="list-group-item" ng-repeat="result in search_results_people">[[result.name]] <span class="label label-success pull-right">contacto</span></a>
+                        <a href="" ng-click="selectEntity('Lion\\Deal', result.id)" class="list-group-item" ng-repeat="result in search_results_deals">[[result.name]] <span class="label label-default pull-right">operación</span></a>
+                    </div>
+                </div>
+
+                <input type="text" id="selectedEntity" ng-model="entity_id" style="display: none;">
+                <!-- <input type="text" name="entity_id" ng-model="entity_id" style="display: none;"> -->
+            </div><!-- /.select-entity -->
+
+        </div><!-- /.clearfix -->
+    </div><!-- /.form-group -->
+
+    <!-- If might have deals -->
+    <div class="form-group" ng-show="selected_entity.deals.length">
+        <label for="">Operación (opcional):</label>
+        <select name="assignment[Lion\Deal]" id="assignmentDeal" class="form-control" ng-model="deal">
+            <option value="">- Seleccione -</option>
+            <option ng-repeat="d in selected_entity.deals" value="[[d.id]]">[[d.name]]</option>
+        </select>
+        [[deal]]
+    </div>
+    
+    <!-- If might have people -->
+    <div class="form-group" ng-show="selected_entity.people.length">
+        <label for="">Contacto (opcional):</label>
+        <select name="assignment[Lion\People]" id="assignmentPeople" class="form-control" ng-model="people">
+            <option value="">- Seleccione -</option>
+            <option ng-repeat="p in selected_entity.people" value="[[p.id]]">[[p.name]]</option>
+        </select>
+    </div>
+</div>

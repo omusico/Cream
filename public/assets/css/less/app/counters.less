@@ -1,0 +1,32 @@
+// Counters styles
+
+.panel.panel-counter {
+    border: none; 
+
+    .panel-heading { 
+        color: #fff; 
+        text-align: center; 
+    }
+
+    .panel-content {
+        text-align : center;
+        font-size  : 32px;
+        padding    : 10px;
+        height: 70px;
+    }
+
+    &.panel-open {
+        .panel-heading { background-color: @brand-primary; }
+        .panel-content { color: @brand-primary }
+    }
+
+    &.panel-closed {
+        .panel-heading { background-color: @brand-success; }
+        .panel-content { color: @brand-success }
+    }
+
+    &.panel-status {
+        .panel-heading { background-color: @brand-warning; }
+        .panel-content { color: @brand-warning; font-size: 20px; padding-top: 18px; }
+    }
+}
